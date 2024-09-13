@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,7 +59,7 @@ namespace collection2
 
                         break;
                         case 6:Console.WriteLine("Numeros pares retirados");
-                        Deletar(lista);
+                        DeletarPar(lista);
                          
                             break;
 
@@ -118,35 +118,24 @@ namespace collection2
         {
             return L.Min();
         }
-        static void Deletar(List<int> L)
+        static void DeletarPar(List<int> L)
         {
-            foreach (int n in L)
+            for(int i = 1; i<L.Count();i++)
             {
-                if (n % 2 == 0)
-                {
-                    L.Remove(n);
-                }
-                else
-                {
-                    Console.Write(n + " ");
-                }
+                if (L[i] % i == 0)
+                    L.Remove(i);
             }
+              
 
 
 
         }    
         static void ExibirRemovPar(List<int> L)
         {
+            DeletarPar(L);
             foreach(int n in L)
             {
-                if(n % 2 ==0)
-                {
-                    L.Remove(n);
-                }
-                else
-                {
                     Console.Write(n + " ");
-                }
             }
         }
         static void Inverter(List<int> L)
